@@ -2,22 +2,28 @@ import './styles.css'
 
 import { useFetchGifs } from "./hooks/useFetchGifs"
 import { shuffleArray } from './helpers/shuffleArray';
+import { Counter } from './components/Counter';
+import { setClickCounter } from './helpers/setClickCounter';
 
 
 export const App = () => {
 
   const { gifs, isLoading, updateGifs } = useFetchGifs();
+  const { clickCounter, updateClickCounter } = setClickCounter();
 
   const handleClick = (index) => {
+    updateClickCounter();
     console.log(index);
     const shuffled = shuffleArray(gifs);
     updateGifs(shuffled);
   }
 
-  // console.log(gifs);
-
   return (
     <>
+    {
+      isLoading && <h3>Loading...</h3>
+    }
+    <Counter clickCounter={ clickCounter }/>
       <div className="grid">
         {
           gifs.map((gif) => (
