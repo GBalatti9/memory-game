@@ -15,6 +15,10 @@ export const useFetchGifs = () => {
         setIsLoading(false);
     }
 
+    const updateGifs = (shuffleGifs) => {
+        setGifs(shuffleGifs)
+    }
+
     useEffect(() => {
         getGifs();
     }, [])
@@ -22,5 +26,6 @@ export const useFetchGifs = () => {
     return {
         gifs,
         isLoading,
+        updateGifs,
     }
 }

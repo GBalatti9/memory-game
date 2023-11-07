@@ -1,13 +1,20 @@
-// import './styles.css'
+import './styles.css'
 
 import { useFetchGifs } from "./hooks/useFetchGifs"
+import { shuffleArray } from './helpers/shuffleArray';
 
 
 export const App = () => {
 
-  const { gifs, isLoading } = useFetchGifs();
+  const { gifs, isLoading, updateGifs } = useFetchGifs();
 
-  console.log(gifs);
+  const handleClick = (index) => {
+    console.log(index);
+    const shuffled = shuffleArray(gifs);
+    updateGifs(shuffled);
+  }
+
+  // console.log(gifs);
 
   return (
     <>
@@ -17,7 +24,7 @@ export const App = () => {
             gif.map((el) => (
               <div
                 key={el.id}
-                onClick={() => shuffleArray(el.id)}
+                onClick={() => handleClick(el.id)}
                 className="grid-item">
                 <img
                   className={el.title}
