@@ -4,18 +4,23 @@ export const checkUserResponse = () => {
 
     const [clickedImages, setClickedImages] = useState([]);
 
-    let findGifById = clickedImages.find((el) => el === index);
-    console.log(clickedImages);
+    const findGif = (index) => {
+        let findGifById = clickedImages.find((el) => el === index);
+        console.log(clickedImages);
+        return findGifById;
+    }
 
+    const updateSetClickImages = (index) => {
+        setClickedImages((prevClickImages) => [...prevClickImages, index])
+    }
 
-    // if (!findGifById) {
-    //     setClickedImages([...clickedImages, index]);
-    //     setClickCounter((prevCounter) => prevCounter + 1);
-    //     // console.log(clickCounter);
-    // } else {
-    //     setBestScore(clickCounter);
-    //     setClickCounter(0);
-    //     setClickedImages([]);
-    //     console.log(clickedImages);
-    // }
+    const resetClickImages = () => {
+        setClickedImages([]);
+    }
+
+    return {
+        findGif,
+        updateSetClickImages,
+        resetClickImages,
+    }
 }

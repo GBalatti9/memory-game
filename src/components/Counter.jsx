@@ -1,8 +1,6 @@
 import { useState } from "react";
 
-export const Counter = ({ clickCounter }) => {
-
-    const [bestScore, setBestScore] = useState(0);
+export const Counter = ({ clickCounter, bestScore }) => {
 
     return (
         <>

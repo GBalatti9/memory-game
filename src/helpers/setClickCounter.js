@@ -5,11 +5,15 @@ export const setClickCounter = () => {
 
     const updateClickCounter = () => {
         setClickCounter((prevCounter) => prevCounter + 1);
-        console.log(clickCounter);
+    }
+
+    const resetCounter = () => {
+        setClickCounter(0);
     }
 
     return {
         clickCounter,
         updateClickCounter,
+        resetCounter,
     }
 }
