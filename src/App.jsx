@@ -1,9 +1,9 @@
 import './styles.css'
 
 import { useFetchGifs } from "./hooks/useFetchGifs"
-import { shuffleArray } from './helpers/shuffleArray';
+import { shuffleArray, setClickCounter } from './helpers';
 import { Counter } from './components/Counter';
-import { setClickCounter } from './helpers/setClickCounter';
+// import { setClickCounter } from './helpers/setClickCounter';
 
 
 export const App = () => {
