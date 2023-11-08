@@ -42,14 +42,14 @@ export const App = () => {
 
   return (
     <>
+      <div className='main-container'>
+        <h2 className='title'>Diego Maradona Memory Game</h2>
+        <p className='subtitle'>Get points by clicking on an image but don't click on any more than once!</p>
+        <Counter clickCounter={clickCounter} bestScore={bestScore} />
+      </div>
       {
         isLoading && <h3>Loading...</h3>
       }
-      <div>
-        <h2>Michael Scott Memory Game</h2>
-        <p>Get points by clicking on an image but don't click on any more than once!</p>
-      </div>
-      <Counter clickCounter={clickCounter} bestScore={bestScore} />
       <div className="grid">
         {
           gifs.map((gif) => (
@@ -61,9 +61,7 @@ export const App = () => {
                 <img
                   className={el.title}
                   src={el.url}
-                  alt="image"
-                  onMouseOver={() => { document.body.style.cursor = 'pointer' }}
-                  onMouseOut={() => { document.body.style.cursor = 'auto' }} />
+                  alt="image"/>
               </div>
             ))
 

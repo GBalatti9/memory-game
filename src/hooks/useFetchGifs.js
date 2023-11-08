@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { apiGet } from "../helpers/httpGet";
 
 const AMOUNT_IMAGES = 12;
-const URL = `https://api.giphy.com/v1/gifs/search?api_key=UhNngbbTnn9RqkzDZpFvG507RX3ZDGp2&q=michael-scott&limit=${AMOUNT_IMAGES}`;
+const URL = `https://api.giphy.com/v1/gifs/search?api_key=UhNngbbTnn9RqkzDZpFvG507RX3ZDGp2&q=maradona&limit=${AMOUNT_IMAGES}`;
 
 export const useFetchGifs = () => {
 
